@@ -8,11 +8,11 @@ public class SendEmail{
 	
 	/* WARNING: This class will work only if the javax.mail.jar file has been imported   
 	 * 
-	 * The SendEmail class allows the system to send authomatic email using a Gmail server. A system email account has been 
-	 * created on gmail.com to send emails.   
+	 * The SendEmail class allows the system to send automatic email using a Gmail server. A system email account has been 
+	 * created on gmail.com to send email.   
 	 */
 	
-	// Properties necessary to sen email
+	// Properties necessary to send email
 	static Properties mailProp;
 	static Session mailSess;
 	static MimeMessage mailMessage;
@@ -44,7 +44,7 @@ public class SendEmail{
 		// ==== STEP 2 ==== MAIL SESSION									   ====> Implements Transport
 		mailSess = Session.getDefaultInstance(mailProp, null);				/* ====> Get default Session */
 		
-		mailMessage = new MimeMessage(mailSess);							/* ====> Crete MIME style email */
+		mailMessage = new MimeMessage(mailSess);							/* ====> Create MIME style email */
 		mailMessage.addRecipient(Message.RecipientType.TO, new InternetAddress(emailAddress));		/*====> Add rceiver's recipient */
 		mailMessage.setSubject("I-Medic Automated Message - Do Not Reply.");						/*====> Set subject */
 		mailMessage.setContent(emailBody, "text/html");												/*====> Set email body */
@@ -66,7 +66,7 @@ public class SendEmail{
 	}
 	
 	
-	// The isSent() method returns a boolean that specifies if the email was sent seccesfully or not
+	// The isSent() method returns a boolean that specifies if the email was sent succesfully or not
 	public boolean isSent(){	
 		return sent;
 	}
